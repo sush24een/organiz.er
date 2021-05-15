@@ -9,18 +9,16 @@
 
 .theNavItems {
   margin: auto;
-  color: #7000da;
 }
 
 .theNavItems:hover {
-  font-weight: bold;
+  margin-bottom: 20px;
   cursor: pointer;
-  font-size: 25px;
+  text-decoration: underline purple;
 }
 
 .userInfo {
   margin-right: 150px;
-
 }
 
 .theNav {
@@ -42,6 +40,7 @@ h1 {
   margin-left: auto;
   margin-right: auto;
   margin-top: auto;
+  margin-bottom: 30px;
 }
 
 /* -------------------------- THIS ALL IS JUST THE MAIN ORGANIZ.ER TEXT ka ANIMATION AND STUFF --------------------------------*/
