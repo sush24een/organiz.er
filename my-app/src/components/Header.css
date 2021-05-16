@@ -1,0 +1,23 @@
+.theNavItems {
+    margin: auto;
+}
+  
+  .theNavItems:hover {
+    margin-bottom: 20px;
+    cursor: pointer;
+    text-decoration: underline purple;
+}
+  
+  .userInfo {
+    margin-right: 100px;
+}
+  
+  .theNav {
+    width: 100%;
+    align-items: center;
+    color: white;
+    text-shadow: 1px 1px 5px black;
+    background-color: rgb(65, 65, 65);
+    font-size: 20px;
+    height: 80px;
+}
