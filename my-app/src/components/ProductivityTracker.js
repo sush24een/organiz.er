@@ -1,15 +1,15 @@
 import React from 'react';
-import "./progressTracker.css";
+import "./ProductivityTracker.css";
 import {
     Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button
 } from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-function ProgressTracker() {
+function ProductivityTracker() {
     return (
         <div>
-            <h1 className="rainbow-text">Progress Tracker</h1>
+            <h1 className="rainbow-text-PT">Productivity Tracker</h1>
             <hr/>
             <div className="manual">
                 <Card>
@@ -36,4 +36,4 @@ function ProgressTracker() {
     );
 }
 
-export default ProgressTracker;
+export default ProductivityTracker;

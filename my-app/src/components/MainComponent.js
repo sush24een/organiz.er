@@ -7,6 +7,7 @@ import {
     CarouselCaption
 } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './MainComponent.css';
 
 const items = [
     {
@@ -48,20 +49,21 @@ function MainComponent() {
     }
 
     const slides = items.map((item) => {
-            return (
-                <CarouselItem
-                    onExiting={() => setAnimating(true)}
-                    onExited={() => setAnimating(false)}
-                    key={item.src}
-                >
-                    <img src={item.src} alt={item.altText} />
-                    <CarouselCaption captionText={item.caption} captionHeader={item.altText} />
-                </CarouselItem>
-            );
+        return (
+            <CarouselItem
+                onExiting={() => setAnimating(true)}
+                onExited={() => setAnimating(false)}
+                key={item.src}
+            >
+                <img src={item.src} alt={item.altText} />
+                <CarouselCaption captionText={item.caption} captionHeader={item.altText} />
+            </CarouselItem>
+        );
     });
 
     return(
-        <div>
+        <div className="mainComponent">
+            <h1 className="rainbow-text-App">ORGANIZ.ER</h1>
             <Carousel activeIndex={activeIndex} next={next} previous={previous}>
                 <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
                 {slides}

@@ -1,23 +1,23 @@
 .theNavItems {
-    margin: auto;
-}
-  
-  .theNavItems:hover {
-    margin-bottom: 20px;
-    cursor: pointer;
-    text-decoration: underline purple;
-}
-  
-  .userInfo {
-    margin-right: 100px;
-}
-  
-  .theNav {
-    width: 100%;
-    align-items: center;
-    color: white;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
     text-shadow: 1px 1px 5px black;
+}
+
+.theNav {
+    margin-top: 5px;
+    width: 100%;
     background-color: rgb(65, 65, 65);
     font-size: 20px;
     height: 80px;
+    position: fixed;
+    z-index: 1;
+}
+
+.userInfo {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 5px black;
 }
