@@ -1,0 +1,24 @@
+.theNavItems {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 5px black;
+}
+
+.theNav {
+    margin-top: 5px;
+    width: 100%;
+    background-color : #904BB9;
+    font-size: 20px;
+    height: 80px;
+    position: sticky;
+    margin-bottom: 50px;
+    z-index: 1;
+}
+
+.userInfo {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 5px black;
+}
