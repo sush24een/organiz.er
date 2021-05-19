@@ -44,6 +44,7 @@ function StudyComponent(){
                 <h2>Some curated videos for you!</h2>
             </div>
             <div class="row">
+                
             <div class="col-sm-8" >
                     <ReactPlayer controls width="480px" height="240px" url="https://www.youtube.com/watch?v=csCp0Wd2-40"></ReactPlayer>
                 </div>
