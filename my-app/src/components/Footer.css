@@ -3,7 +3,9 @@
     background-color: #52307c;
     padding-top: 3em;
     position: sticky;
-    bottom: 0;
+    bottom: 0px;
     width: 100%;
     margin-top: 50px;
+    display:flex;
+    flex-direction:column;
   }

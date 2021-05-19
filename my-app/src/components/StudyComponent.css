@@ -1,6 +1,32 @@
 h1{
     /* text-shadow: 1px 1px 2px #52307c; */
-    color: rgba(255, 255, 255, 0.1);
+    color: #7000da;
     font-style: italic;
 }
+
+h2{
+    color: #7000da;
+}
+
+
+.align-items-stretch {
+    text-align: justify;
+    text-justify: inter-character;
+    display: flex;
+}
+
+
+.align-items-stretch:after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+  }
+
+  .react-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+
 
