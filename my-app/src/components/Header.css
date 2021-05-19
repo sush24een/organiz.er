@@ -11,8 +11,7 @@
     background-color : #904BB9;
     font-size: 20px;
     height: 80px;
-    position: sticky;
-    margin-bottom: 50px;
+    position: fixed;
     z-index: 1;
 }
 
