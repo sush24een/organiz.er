@@ -10,31 +10,37 @@ function ProductivityTracker() {
     const [timerText, setTimerText] = React.useState("Start Timer");
     const [timerState, setTimerState] = React.useState(false);
     const [elapsedTime, setTimeElapsed] = React.useState();
-    const[startTime, setStartTime] = React.useState();
+    const [startTime, setStartTime] = React.useState();
+    const [runningSubmission, setRunningSubmission] = React.useState(false);
 
     function showElapsedTime() {
         if(timerState) {
             setTimeElapsed(new Date().getTime() - startTime);
+            document.getElementById('elapsedTime').style.visibility = 'visible';
         }
     }
 
     function changeTimerState() {
         if(timerState) {
             setTimerState(false);
+            setRunningSubmission(false);
             setTimerText("Start Timer");
             setTimeElapsed(new Date().getTime() - startTime);
+            document.getElementById('elapsedTime').style.visibility = 'visible';
         } else {
             setTimerState(true);
             setTimerText("End Timer");
             setStartTime(new Date().getTime());
+            document.getElementById('startedAt').style.visibility = 'visible';
         }//console.log(timerState, timerText);
     }
 
-    function submitTime() {
+    function submitCounter() {
         if(timerState) {
-
+            setRunningSubmission(true);
         }
     }
+
 
     return (
         <div className="productivityComponent">
@@ -44,8 +50,10 @@ function ProductivityTracker() {
                 <div className="manual">
                     <Card style={{ padding: '10px', backgroundColor: '#7000da', borderColor: 'black' }}>
                         <CardBody>
-                            <CardTitle tag="h5">Manual</CardTitle>
-                            <CardSubtitle tag="h6">Enter the time intervals for specific major tasks you spent your time on, for today.</CardSubtitle>
+                            <CardTitle tag="h4"><strong>Manual</strong></CardTitle>
+                            <CardSubtitle className="blackTextShouldBeVisible" tag="h6">
+                                Enter the time intervals for specific major tasks you spent your time on, for today.
+                            </CardSubtitle>
                             <Alert style={{ marginTop: '10px', color:'#7000da', backgroundColor: '#333', borderColor: '#333' }}>
                                 <Form>
                                     <FormGroup>
@@ -75,15 +83,17 @@ function ProductivityTracker() {
                                     </span>
                                 </Form>
                             </Alert>
-                            <Button style={{ float:'right', color:'#7000da', backgroundColor: '#333', borderColor: '#333' }}>&#10004;</Button>
+                            <Button className="submitButt">&#10004;</Button>
                         </CardBody>
                     </Card>
                 </div>
                 <div className="counter">
                     <Card style={{ padding: '10px', backgroundColor: '#7000da', borderColor: 'black' }}>
                         <CardBody>
-                            <CardTitle tag="h5">Counted</CardTitle>
-                            <CardSubtitle tag="h6">Enter the Task Name/Activity Name and start the timer and let the time be counted by itself.</CardSubtitle>
+                            <CardTitle tag="h4"><strong>Counted</strong></CardTitle>
+                            <CardSubtitle className="blackTextShouldBeVisible" tag="h6">
+                                Enter the Task Name/Activity Name and start the timer and let the time be counted by itself.
+                            </CardSubtitle>
                             <Alert style={{ marginTop: '10px', color:'#7000da', backgroundColor: '#333', borderColor: '#333' }}>
                                 <Form>
                                     <FormGroup>
@@ -105,21 +115,32 @@ function ProductivityTracker() {
                                     </FormGroup>
                                 </Form>
                                 <div>
-                                    <Button onClick={ changeTimerState } style={{ backgroundColor: '#7000da', borderColor: 'black' }}>
+                                    <Button className="blackTextShouldBeVisible" onClick={ changeTimerState }>
                                         { timerText }
                                     </Button>
-                                    &nbsp;&nbsp;Started At :&nbsp;&nbsp;
-                                    <span style={{fontWeight: 800, fontSize: '30px'}}>{ startTime }</span>
+                                    <span id="startedAt" style={{ visibility: 'hidden' }}>
+                                        &nbsp;&nbsp;Started At :&nbsp;&nbsp;
+                                        <span style={{fontWeight: 800, fontSize: '30px'}}>
+                                            { startTime }
+                                        </span>
+                                    </span>
                                 </div>
                                 <div>
-                                    <Button onClick={ showElapsedTime } style={{ backgroundColor: '#7000da', borderColor: 'black' }}>
+                                    <Button className="blackTextShouldBeVisible" onClick={ showElapsedTime }>
                                         Show Elapsed Time
                                     </Button>
-                                    &nbsp;&nbsp;Time Elapsed :&nbsp;&nbsp;
-                                    <span style={{fontWeight: 800, fontSize: '30px'}}>{ elapsedTime }</span>
+                                    <span id="elapsedTime" style={{ visibility: 'hidden' }}>
+                                        &nbsp;&nbsp;Time Elapsed :&nbsp;&nbsp;
+                                        <span style={{ fontWeight: 800, fontSize: '30px' }}>
+                                            { elapsedTime }
+                                        </span>
+                                    </span>
                                 </div>
                             </Alert>
-                            <Button onClick={ submitTime } style={{ float:'right', color:'#7000da', backgroundColor: '#333', borderColor: '#333' }}>&#10004;</Button>
+                            <Button className="submitButt" onClick={ submitCounter }>&#10004;</Button>
+                            <Alert color="danger" isOpen={ runningSubmission && timerState }>
+                                Timer Still running. :(
+                            </Alert>
                         </CardBody>
                     </Card>
                 </div>

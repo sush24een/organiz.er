@@ -1,6 +1,21 @@
+
+.submitButt {
+    float: right;
+    color: #7000da;
+    background-color: #333;
+    border-color: #333;
+}
+
+.blackTextShouldBeVisible {
+    font-weight: 500;
+    font-size: 18px;
+    background-color: #7000da;
+    border-color: black;
+}
+
 .AcessPT {
     margin: auto;
-    width: 100%;
+    width: 90%;
 }
 
 .productivityComponent {
