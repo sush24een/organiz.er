@@ -1,13 +1,29 @@
+.AcessPT {
+    margin: auto;
+    width: 100%;
+}
+
+.productivityComponent {
+    margin-top: 130px;
+    margin-bottom: 40px;
+}
+
 .manual {
-    margin-left: 10px;
-    align-items: left;
-    width: 45%;
+    font-weight: 600;
+    font-size: 20px;
+    margin-left: 1.5%;
+    width: 47%;
+    margin-bottom: 40px;
+    float: left;
 }
 
 .counter {
-    margin-right: 10px;
-    align-items: right;
-    width: 45%;
+    font-weight: 600;
+    font-size: 20px;
+    margin-right: 1.5%;
+    width: 47%;
+    margin-bottom: 40px;
+    float: right;
 }
 
 /* -------------- THIS ALL IS JUST THE PROGRESS TRACKER TEXT ka ANIMATION AND STUFF -------------------*/
@@ -16,11 +32,12 @@ h1.rainbow-text-PT {
     font-weight: 800;
     font-size: 5em;
     width: 11.3em;
-    line-height: 1.3em;
+    line-height: 1.2em;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 130px;
-    margin-bottom: 30px;
+    margin-bottom: 55px;
+    margin-top: auto;
+    align-items: center;
 }
   
   /* Style the rainbow text element. */
@@ -53,42 +70,42 @@ h1.rainbow-text-PT {
     
     /* Animate the text when loading the element. */
     /* This animates it on page load and when hovering out. */
-    animation: rainbow-text-animation-rev 1.3s ease forwards;
+    animation: rainbow-text-PT-animation-rev 1.3s ease forwards;
     cursor: pointer;
 }
   
   /* Add animation on hover. */
 .rainbow-text-PT:hover {
-    animation: rainbow-text-animation 1.3s ease forwards;
+    animation: rainbow-text-PT-animation 1.3s ease forwards;
 }
   
   /* Move the background and make it larger. */
   /* Animation shown when hovering over the text. */
-@keyframes rainbow-text-animation {
+@keyframes rainbow-text-PT-animation {
     0% {
         background-size: 57%;
         background-position: 0 0;
     }
     20% {
         background-size: 57%;
-        background-position: 0 1em;
+        background-position: 0 1.5em;
     }
     100% {
         background-size: 300%;
-        background-position: -13em 1em;
+        background-position: -18em 1.5em;
     }
 }
   
   /* Move the background and make it smaller. */
   /* Animation shown when entering the page and after the hover animation. */
-@keyframes rainbow-text-animation-rev {
+@keyframes rainbow-text-PT-animation-rev {
     0% {
         background-size: 300%;
-        background-position: -13em 1em;
+        background-position: -18em 1.5em;
     }
     20% {
         background-size: 57%;
-        background-position: 0 1em;
+        background-position: 0 1.5em;
     }
     100% {
         background-size: 57%;

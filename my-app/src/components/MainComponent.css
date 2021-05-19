@@ -1,5 +1,11 @@
 .mainComponent {
-    margin-top: 130px
+    margin-top: 130px;
+}
+
+.carousel {
+    margin: auto;
+    width: 80%;
+    margin-bottom: 40px;
 }
 
 /* ------------ THIS ALL IS JUST THE MAIN ORGANIZ.ER TEXT ka ANIMATION AND STUFF ---------------*/
@@ -13,7 +19,6 @@ h1.rainbow-text-App {
     margin-right: auto;
     margin-bottom: 55px;
     margin-top: auto;
-    align-items: center;
 }
 
 /* Style the rainbow text element. */
@@ -46,19 +51,19 @@ h1.rainbow-text-App {
     
     /* Animate the text when loading the element. */
     /* This animates it on page load and when hovering out. */
-    animation: rainbow-text-animation-rev 1.3s ease forwards;
+    animation: rainbow-text-App-animation-rev 1.3s ease forwards;
 
     cursor: pointer;
 }
 
 /* Add animation on hover. */
 .rainbow-text-App:hover {
-    animation: rainbow-text-animation 1.3s ease forwards;
+    animation: rainbow-text-App-animation 1.3s ease forwards;
 }
 
 /* Move the background and make it larger. */
 /* Animation shown when hovering over the text. */
-@keyframes rainbow-text-animation {
+@keyframes rainbow-text-App-animation {
     0% {
         background-size: 57%;
         background-position: 0 0;
@@ -69,16 +74,16 @@ h1.rainbow-text-App {
     }
     100% {
         background-size: 300%;
-        background-position: -13em 1em;
+        background-position: -11em 1em;
     }
 }
 
 /* Move the background and make it smaller. */
 /* Animation shown when entering the page and after the hover animation. */
-@keyframes rainbow-text-animation-rev {
+@keyframes rainbow-text-App-animation-rev {
     0% {
         background-size: 300%;
-        background-position: -13em 1em;
+        background-position: -11em 1em;
     }
     20% {
         background-size: 57%;
