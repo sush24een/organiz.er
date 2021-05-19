@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Header.css";
 import ProductivityTracker from './ProductivityTracker.js';
+import StudyComponent from './StudyComponent';
 import MainComponent from './MainComponent.js';
 
 
@@ -19,6 +20,14 @@ function Header() {
             <ProductivityTracker/>
         );
     }
+
+    const studyComponent= () => {
+        return(
+            <StudyComponent/>
+        );
+    }
+
+
 
     return(
             <Router>
@@ -45,6 +54,7 @@ function Header() {
                 </div>
                 <Route exact={true} path="/" component={ mainComponent }/>
                 <Route path="/productivityTracker" component={ productivityTracker }/>
+                <Route path="/studyWithMe" component={ studyComponent } />
             </Router>
     );
 }
