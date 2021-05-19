@@ -51,7 +51,7 @@ function ProductivityTracker() {
                     <Card style={{ padding: '10px', backgroundColor: '#7000da', borderColor: 'black' }}>
                         <CardBody>
                             <CardTitle tag="h4"><strong>Manual</strong></CardTitle>
-                            <CardSubtitle className="blackTextShouldBeVisible" tag="h6">
+                            <CardSubtitle className="textShouldBeVisible" tag="h6">
                                 Enter the time intervals for specific major tasks you spent your time on, for today.
                             </CardSubtitle>
                             <Alert style={{ marginTop: '10px', color:'#7000da', backgroundColor: '#333', borderColor: '#333' }}>
@@ -83,7 +83,9 @@ function ProductivityTracker() {
                                     </span>
                                 </Form>
                             </Alert>
-                            <Button className="submitButt">&#10004;</Button>
+                            <Button className="submitButt" color="success">
+                                &#10004;
+                            </Button>
                         </CardBody>
                     </Card>
                 </div>
@@ -91,7 +93,7 @@ function ProductivityTracker() {
                     <Card style={{ padding: '10px', backgroundColor: '#7000da', borderColor: 'black' }}>
                         <CardBody>
                             <CardTitle tag="h4"><strong>Counted</strong></CardTitle>
-                            <CardSubtitle className="blackTextShouldBeVisible" tag="h6">
+                            <CardSubtitle className="textShouldBeVisible" tag="h6">
                                 Enter the Task Name/Activity Name and start the timer and let the time be counted by itself.
                             </CardSubtitle>
                             <Alert style={{ marginTop: '10px', color:'#7000da', backgroundColor: '#333', borderColor: '#333' }}>
@@ -115,7 +117,7 @@ function ProductivityTracker() {
                                     </FormGroup>
                                 </Form>
                                 <div>
-                                    <Button className="blackTextShouldBeVisible" onClick={ changeTimerState }>
+                                    <Button color="danger" className="textShouldBeVisible" onClick={ changeTimerState }>
                                         { timerText }
                                     </Button>
                                     <span id="startedAt" style={{ visibility: 'hidden' }}>
@@ -126,7 +128,7 @@ function ProductivityTracker() {
                                     </span>
                                 </div>
                                 <div>
-                                    <Button className="blackTextShouldBeVisible" onClick={ showElapsedTime }>
+                                    <Button color="danger" className="textShouldBeVisible" onClick={ showElapsedTime }>
                                         Show Elapsed Time
                                     </Button>
                                     <span id="elapsedTime" style={{ visibility: 'hidden' }}>
@@ -137,7 +139,9 @@ function ProductivityTracker() {
                                     </span>
                                 </div>
                             </Alert>
-                            <Button className="submitButt" onClick={ submitCounter }>&#10004;</Button>
+                            <Button className="submitButt" color="success" onClick={ submitCounter }>
+                                &#10004;
+                            </Button>
                             <Alert color="danger" isOpen={ runningSubmission && timerState }>
                                 Timer Still running. :(
                             </Alert>
