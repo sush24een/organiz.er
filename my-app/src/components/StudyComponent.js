@@ -6,20 +6,32 @@ import {
     Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button
 } from 'reactstrap';
+import styled, { keyframes } from 'styled-components';
+import { fadeIn } from 'react-animations';
+
+const fadeInAnimation = keyframes`${fadeIn}`;
+const FadyDiv = styled.div`
+  animation: 2s ${fadeInAnimation};
+`;
 
 
 function StudyComponent(){
     return(
         <div className="justForUpperBorder">
+            <div class="cube"></div>
+            <div class="cube"></div>
+            <div class="cube"></div>
+            <div class="cube"></div>
+            <div class="cube"></div>
         <div className="container">
             <div class="row align-items-start">
                 <div class="col">
-                    <h1 class="rainbow-text-SC">Study With Me</h1>
-                    <h1 class="rainbow-text-SC">Study With Me</h1>
-                    <h1 class="rainbow-text-SC">Study With Me</h1>
-                    <h1 class="rainbow-text-SC">Study With Me</h1>
-                    <h1 class="rainbow-text-SC">Study With Me</h1>
-                    <h1 class="rainbow-text-SC">Study With Me</h1>
+                <FadyDiv><h1 class="rainbow-text-SC">Study With Me</h1></FadyDiv>
+                <FadyDiv><h1 class="rainbow-text-SC">Study With Me</h1></FadyDiv>
+                <FadyDiv><h1 class="rainbow-text-SC">Study With Me</h1></FadyDiv>
+                <FadyDiv><h1 class="rainbow-text-SC">Study With Me</h1></FadyDiv>
+                <FadyDiv><h1 class="rainbow-text-SC">Study With Me</h1></FadyDiv>
+                <FadyDiv><h1 class="rainbow-text-SC">Study With Me</h1></FadyDiv>
                 </div>
                 <div class="col">
                     <Card style={{ width: "100%", padding: '10px', backgroundColor: '#7000da', borderColor: 'black' }} className="card mb-3">
@@ -46,9 +58,11 @@ function StudyComponent(){
                     <ReactPlayer controls width="480px" height="240px" url="https://www.youtube.com/watch?v=csCp0Wd2-40"></ReactPlayer>
                 </div>
                 <div class="col-sm-8" >
+                <div class="cube"></div>
                     <ReactPlayer controls width="480px" height="240px" url="https://www.youtube.com/watch?v=1Cv0kCB59J4"></ReactPlayer>
                 </div>
                 <div class="col-sm-8" >
+                    <div class="cube"></div>
                     <ReactPlayer controls width="480px" height="240px" url="https://www.youtube.com/watch?v=SJl1AV9uQbA"></ReactPlayer>
                 </div>
                 <div class="col-sm-8">
@@ -58,9 +72,12 @@ function StudyComponent(){
                     <ReactPlayer controls width="480px" height="240px" url="https://www.youtube.com/watch?v=Qe8q7Dnicew"></ReactPlayer>
                 </div>
                 <div class="col-sm-8">
+                <div class="cube"></div>
                     <ReactPlayer controls width="480px" height="240px" url="https://www.youtube.com/watch?v=qND2ScWE1e4"></ReactPlayer>            
+                    <div class="cube"></div>
                 </div>
                 <div class="col-sm-8">
+                <div class="cube"></div>
                     <ReactPlayer controls width="480px" height="240px" url="https://www.youtube.com/watch?v=Y3NWLewVhpk"></ReactPlayer>         
                 </div>
             </div>

@@ -2,6 +2,13 @@ import React from "react";
 import { UncontrolledCarousel } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './MainComponent.css';
+import styled, { keyframes } from 'styled-components';
+import { fadeIn } from 'react-animations';
+
+const fadeInAnimation = keyframes`${fadeIn}`;
+const FadyDiv = styled.div`
+  animation: 2s ${fadeInAnimation};
+`;
 
 const items = [
     {
@@ -27,12 +34,10 @@ const items = [
 function MainComponent() {
     return(
         <div className="mainComponent">
-            <h1 className="rainbow-text-App">ORGANIZ.ER</h1>
-            <hr/>
+            <FadyDiv><h1 className="rainbow-text-App">ORGANIZ.ER</h1></FadyDiv>
             <div className="carousel">
                 <UncontrolledCarousel items={items}/>
             </div>
-            <hr/>
         </div>
     );
 }

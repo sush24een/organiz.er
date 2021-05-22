@@ -24,7 +24,7 @@ const Footer = () => (
               <li><Link to="/to-do">To-do's</Link></li>
               <li><Link to="/studyWithMe">Study With Me</Link></li>
               <li><Link to="/productivityTracker">Productivity Tracker</Link></li>
-
+              
             </Router>
               
             </ui>

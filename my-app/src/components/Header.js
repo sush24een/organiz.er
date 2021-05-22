@@ -27,35 +27,31 @@ function Header() {
         );
     }
 
-
-
     return(
-            <Router>
-                <div className="theNav">
-                    <Nav>
-                        <NavItem className="theNavItems">
-                            <Link to="/">Organiz.er</Link>
-                            
+        <Router>
+            <div className="theNav">
+                <Nav>
+                    <NavItem className="theNavItems">
+                        <Link to="/">Organiz.er</Link>  
                         </NavItem>
-                        <NavItem className="theNavItems">
-                            <Link to="/to-do">To-do's</Link>
+                    <NavItem className="theNavItems">
+                        <Link to="/to-do">To-do's</Link>
                         </NavItem>
-                        <NavItem className="theNavItems">
-                            <Link to="/studyWithMe">Study With Me</Link>
-                        </NavItem>
-                        <NavItem className="theNavItems">
-                            <Link to="/productivityTracker">Productivity Tracker</Link>
-                            
-                        </NavItem>
-                        <NavItem className="userInfo">
-                            <Button outline color="primary">user info stuff</Button>
-                        </NavItem>
-                    </Nav>
-                </div>
-                <Route exact={true} path="/" component={ mainComponent }/>
-                <Route path="/productivityTracker" component={ productivityTracker }/>
-                <Route path="/studyWithMe" component={ studyComponent } />
-            </Router>
+                    <NavItem className="theNavItems">
+                        <Link to="/studyWithMe">Study With Me</Link>
+                    </NavItem>
+                    <NavItem className="theNavItems">
+                        <Link to="/productivityTracker">Productivity Tracker</Link>        
+                    </NavItem>
+                    <NavItem className="userInfo">
+                        <Button outline color="primary">user info stuff</Button>
+                    </NavItem>
+                </Nav>
+            </div>
+            <Route exact={true} path="/" component={ mainComponent }/>
+            <Route path="/productivityTracker" component={ productivityTracker }/>
+            <Route path="/studyWithMe" component={ studyComponent } />
+        </Router>
     );
 }
 
