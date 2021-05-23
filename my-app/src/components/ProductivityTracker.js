@@ -58,30 +58,29 @@ function ProductivityTracker() {
         var start = startTime.split(":");
         var end = elapsedTime.split(":");
         var spent = [];
-            for(var i=0; i<start.length; i++) {
-                spent[i] = end[i] - start[i];
-            } if(spent[1] < 0) {
-                spent[1] += 60;
-                spent[0] -= 1;
-            } if(spent[0] < 0) spent[0] += 24;
-        //console.log(task, desc, startTime, elapsedTime);
+        for(var i=0; i<start.length; i++) {
+            spent[i] = end[i] - start[i];
+        } if(spent[1] < 0) {
+            spent[1] += 60;
+            spent[0] -= 1;
+        } if(spent[0] < 0) spent[0] += 24;
+        
         var response = await fetch('/track', {
             method: 'POST',
             headers: {
-              'Content-Type': 'application/json',
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify({
                 date: moment().format('l'),
-                task:task,
-                desc:desc,
-                startTime:startTime,
-                spentTime:spent[0] + ":" + spent[1]
+                task: task,
+                desc: desc,
+                startTime: startTime,
+                spentTime: spent[0] + ":" + spent[1]
             })
-          });
-          var data = await response.json();
-          console.log(data);
-          document.getElementsByClassName('submitButt')[0].innerHTML = "&#10004;";
-          
+        });
+        var data = await response.json();
+        console.log(data);
+        document.getElementsByClassName('submitButt')[0].innerHTML = "&#10004;";
     }
 
     function submitCounted(e) {
