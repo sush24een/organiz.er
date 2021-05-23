@@ -9,7 +9,7 @@ const Footer = () => (
         <div className="row">
           {/* Column1 */}
           <div className="col">
-            <h2 style={{ textShadow: '1px 1px 2px black' }}>Organiz.er</h2>
+            <h2 style={{ textShadow: '1px 2px 2px black' }}>Organiz.er</h2>
             <h5 className="list-unstyled">
               <li>Vipz and Sush</li>
               <li>Bangalore, India</li>

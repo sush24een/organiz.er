@@ -1,3 +1,12 @@
+.PTalerts {
+    margin-top: 10px;
+    color:#7000da;
+    background-color: #333;
+    font-weight: bold;
+    border-color: #333;
+    text-shadow: 1px 2px 2px black;
+}
+
 .light {
     position: absolute;
     width: 0px;
@@ -118,6 +127,8 @@
     color: #7000da;
     background-color: #333;
     border-color: #333;
+    font-weight: 800;
+    font-size: 16px;
 }
 
 .textShouldBeVisible {

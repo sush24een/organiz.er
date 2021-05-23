@@ -1,9 +1,6 @@
 import React from 'react';
 import "./ProductivityTracker.css";
-import {
-    Card, CardBody, CardTitle, CardSubtitle, Alert,
-    Button, Form, FormGroup, Label, Input
-} from 'reactstrap';
+import { Card, CardBody, CardTitle, CardSubtitle, Alert, Button, Form, FormGroup, Label, Input, Spinner } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styled, { keyframes } from 'styled-components';
 import { fadeIn } from 'react-animations';
@@ -20,10 +17,12 @@ function ProductivityTracker() {
     const [elapsedTime, setTimeElapsed] = React.useState("");
     const [startTime, setStartTime] = React.useState("");
     const [runningSubmission, setRunningSubmission] = React.useState(false);
+    const [task, setTask] = React.useState("");
+    const [desc, setDesc] = React.useState("");
 
     function showElapsedTime() {
         if(timerState) {
-            setTimeElapsed(moment(startTime, "HH:mm:ss a").fromNow());
+            setTimeElapsed(moment(startTime, "HH:mm").fromNow());
             document.getElementById('elapsedTime').style.visibility = 'visible';
         }
     }
@@ -33,26 +32,56 @@ function ProductivityTracker() {
             setTimerState(false);
             setRunningSubmission(false);
             setTimerText("Start Timer");
+            
             var start = startTime.split(":");
-            var end = moment().format('HH:mm:ss').split(":");
+            var end = moment().format('HH:mm').split(":");
             var spent = [];
             for(var i=0; i<start.length; i++) {
                 spent[i] = end[i] - start[i];
-            }
-            if(spent[0] < 0) spent[0] += 24;
-            setTimeElapsed(spent[0] + " Hr, " + spent[1] + " Min, " + spent[2] + " Sec.");
+            } if(spent[1] < 0) {
+                spent[1] += 60;
+                spent[0] -= 1;
+            } if(spent[0] < 0) spent[0] += 24;
+            setTimeElapsed(spent[0] + ":" + spent[1]);
             document.getElementById('elapsedTime').style.visibility = 'visible';
         } else {
             setTimerState(true);
             setTimerText("End Timer");
-            setStartTime(moment().format('HH:mm:ss'));
+            setStartTime(moment().format('HH:mm'));
             document.getElementById('startedAt').style.visibility = 'visible';
         }//console.log(timerState, timerText);
     }
 
-    function submitManual(e) {
+    async function submitManual(e) {
         e.preventDefault();
-        //////////////////////////////////////////////////////////
+        document.getElementsByClassName('submitButt')[0].innerHTML = "Submitting...";
+        var start = startTime.split(":");
+        var end = elapsedTime.split(":");
+        var spent = [];
+            for(var i=0; i<start.length; i++) {
+                spent[i] = end[i] - start[i];
+            } if(spent[1] < 0) {
+                spent[1] += 60;
+                spent[0] -= 1;
+            } if(spent[0] < 0) spent[0] += 24;
+        //console.log(task, desc, startTime, elapsedTime);
+        var response = await fetch('/track', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                date: moment().format('l'),
+                task:task,
+                desc:desc,
+                startTime:startTime,
+                spentTime:spent[0] + ":" + spent[1]
+            })
+          });
+          var data = await response.json();
+          console.log(data);
+          document.getElementsByClassName('submitButt')[0].innerHTML = "&#10004;";
+          
     }
 
     function submitCounted(e) {
@@ -90,31 +119,31 @@ function ProductivityTracker() {
                             <CardSubtitle className="textShouldBeVisible" tag="h6">
                                 Enter the time intervals for specific major tasks you spent your time on, for today.
                             </CardSubtitle>
-                            <Form onSubmit={e => { submitManual(e) }}>
-                                <Alert style={{ marginTop: '10px', color:'#7000da', backgroundColor: '#333', borderColor: '#333' }}>
+                            <Form onSubmit={e => { submitManual(e)}}>
+                                <Alert className="PTalerts">
                                     <FormGroup>
                                         <Label for="exampleSelect">Task Done</Label>
-                                        <Input type="select" required="required" name="select" id="exampleSelect">
+                                        <Input onChange={e => setTask(e.target.value)} type="select" required="required">
                                             <option></option>
-                                            <option value="St">Studied</option>
-                                            <option value="E/Y">Exercised / Yoga</option>
-                                            <option value="W">Worked</option>
-                                            <option value="DR">Daily Routines</option>
-                                            <option value="P">Played</option>
-                                            <option value="Sl">Slept</option>
-                                            <option value="M">Misc.</option>
+                                            <option value="Study">Studied</option>
+                                            <option value="Exercise / Yoga">Exercised / Yoga</option>
+                                            <option value="Work">Worked</option>
+                                            <option value="Daily Routines">Daily Routines</option>
+                                            <option value="Play">Played</option>
+                                            <option value="Sleep">Slept</option>
+                                            <option value="Misc.">Misc.</option>
                                         </Input>
                                     </FormGroup>
                                     <FormGroup>
                                         <Label for="exampleEmail">Description (optional) :</Label>
-                                        <Input type="textarea" name="text" id="exampleText"/>
+                                        <Input onChange={e => setDesc(e.target.value)} type="textarea"/>
                                     </FormGroup>
                                     <span>
                                         <FormGroup>
                                             <label>FROM -&nbsp;&nbsp;</label>
-                                            <input type="time" required />
+                                            <input onChange={e => setStartTime(e.target.value)} type="time" required />
                                             <label>&nbsp;&nbsp;, TO -&nbsp;&nbsp;</label>
-                                            <input type="time" required />
+                                            <input onChange={e => setTimeElapsed(e.target.value)} type="time" required />
                                         </FormGroup>
                                     </span>
                                 </Alert>
@@ -133,18 +162,18 @@ function ProductivityTracker() {
                                 Enter the Task Name/Activity Name and start the timer and let the time be counted by itself.
                             </CardSubtitle>
                             <Form>
-                                <Alert style={{ marginTop: '10px', color:'#7000da', backgroundColor: '#333', borderColor: '#333' }}>
+                                <Alert className="PTalerts">
                                     <FormGroup>
                                         <Label for="exampleSelect">Task Done</Label>
-                                        <Input required="required" type="select" name="select" id="exampleSelect">
-                                        <option></option>
-                                        <option value="St">Studying</option>
-                                        <option value="E/Y">Exercise / Yoga</option>
-                                        <option value="W">Working</option>
-                                        <option value="DR">Daily Routines</option>
-                                        <option value="P">Playing</option>
-                                        <option value="Sl">Sleeping</option>
-                                        <option value="M">Misc.</option>
+                                        <Input onChange={e => setTask(e.target.value)} required="required" type="select">
+                                            <option></option>
+                                            <option value="Study">Studying</option>
+                                            <option value="Exercise / Yoga">Exercise / Yoga</option>
+                                            <option value="Work">Working</option>
+                                            <option value="Daily Routines">Daily Routines</option>
+                                            <option value="Play">Playing</option>
+                                            <option value="Sleep">Sleeping</option>
+                                            <option value="Misc.">Misc.</option>
                                         </Input>
                                     </FormGroup>
                                     <FormGroup>
@@ -181,6 +210,7 @@ function ProductivityTracker() {
                             <Alert id="eraruto" color="danger" isOpen={ runningSubmission && timerState }>
                                 Timer Still running. :(
                             </Alert>
+                            <Spinner type="grow" color="success"/>
                         </CardBody>
                     </Card>
                 </div>
