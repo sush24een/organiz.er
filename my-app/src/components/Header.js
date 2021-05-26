@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Nav, NavItem } from 'reactstrap';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "./Header.css";
+import "../CSS/Header.css";
 import ProductivityTracker from './ProductivityTracker.js';
 import StudyComponent from './StudyComponent';
 import MainComponent from './MainComponent.js';

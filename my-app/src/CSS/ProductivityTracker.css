@@ -1,3 +1,29 @@
+.trackButt {
+    margin-top: 5px;
+    float: right;
+    color: #7000da;
+    background-color: black;
+    border-color: #333;
+    font-weight: 800;
+    font-size: 16px;
+}
+
+.tracker .modal-header {
+    color: black;
+    background-color: #7000da;
+}
+
+.tracker .modal-footer {
+    background-color: #333;
+    color: #bbbbbb;
+}
+
+.tracker .modal-body {
+    background-color: #333;
+    color: white;
+    width: 100%;
+}
+
 .PTalerts {
     margin-top: 10px;
     color:#7000da;
@@ -211,13 +237,13 @@ h1.rainbow-text-PT {
     
     /* Animate the text when loading the element. */
     /* This animates it on page load and when hovering out. */
-    animation: rainbow-text-PT-animation-rev 1.3s ease forwards;
+    animation: rainbow-text-PT-animation-rev 1.5s ease forwards;
     cursor: pointer;
 }
   
   /* Add animation on hover. */
 .rainbow-text-PT:hover {
-    animation: rainbow-text-PT-animation 1.3s ease forwards;
+    animation: rainbow-text-PT-animation 1.5s ease forwards;
 }
   
   /* Move the background and make it larger. */

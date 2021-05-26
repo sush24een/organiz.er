@@ -1,3 +1,9 @@
+.MC-slides {
+    color: rgb(255, 0, 0);
+    text-shadow: 1px 1px 4px black;
+    height: 520px;
+}
+
 .mainComponent {
     margin-top: 130px;
 }

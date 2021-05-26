@@ -1,10 +1,10 @@
 import React from 'react';
-import "./ProductivityTracker.css";
-import { Card, CardBody, CardTitle, CardSubtitle, Alert, Button, Form, FormGroup, Label, Input, Spinner } from 'reactstrap';
+import "../CSS/ProductivityTracker.css";
+import { Card, CardBody, CardTitle, CardSubtitle, Alert, Button, Form, FormGroup, Label, Input, Spinner, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import styled, { keyframes } from 'styled-components';
-import { fadeIn } from 'react-animations';
-import moment from 'moment';
+import styled, { keyframes } from '../../node_modules/styled-components';
+import { fadeIn } from '../../node_modules/react-animations';
+import moment from '../../node_modules/moment';
 
 const fadeInAnimation = keyframes`${fadeIn}`;
 const FadyDiv = styled.div`
@@ -19,6 +19,40 @@ function ProductivityTracker() {
     const [runningSubmission, setRunningSubmission] = React.useState(false);
     const [task, setTask] = React.useState("");
     const [desc, setDesc] = React.useState("");
+    const [modal, setModal] = React.useState(false);
+    const toggle = () => setModal(!modal);
+    const [trackingDate, setTrackingDate] = React.useState("");
+    const [trackingCategory, setTrackingCategory] = React.useState("");
+
+    async function trackDate(e) {
+        e.preventDefault();
+        var response = await fetch('/trackDate', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                date: trackingDate
+            })
+        });
+        var data = await response.json();
+        console.log(data);
+    }
+
+    async function trackCategory(e) {
+        e.preventDefault();
+        var response = await fetch('/trackCategory', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                category: trackingCategory
+            })
+        });
+        var data = await response.text();
+        console.log(data);
+    }
 
     function showElapsedTime() {
         if(timerState) {
@@ -65,20 +99,20 @@ function ProductivityTracker() {
             spent[0] -= 1;
         } if(spent[0] < 0) spent[0] += 24;
         
-        var response = await fetch('/track', {
+        var response = await fetch('/submitData', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                date: moment().format('l'),
+                date: moment().format().substr(0, 10),
                 task: task,
                 desc: desc,
                 startTime: startTime,
                 spentTime: spent[0] + ":" + spent[1]
             })
         });
-        var data = await response.json();
+        var data = await response.text();
         console.log(data);
         document.getElementsByClassName('submitButt')[0].innerHTML = "&#10004;";
     }
@@ -109,8 +143,45 @@ function ProductivityTracker() {
             <div class='light x6'></div>
             <div class='light x7'></div>
             <div class='light x9'></div>
-            <FadyDiv><h1 className="rainbow-text-PT">Productivity Tracker</h1></FadyDiv>
+            <FadyDiv><h1 onClick={ toggle } className="rainbow-text-PT">Productivity Tracker</h1></FadyDiv>
             <div>
+                <Modal isOpen={ modal } toggle={ toggle } className="tracker modal-lg">
+                    <ModalHeader toggle={ toggle }>Select a category to track -</ModalHeader>
+                    <ModalBody>
+                        <span>
+                            <Form style={{ float: 'left', width: '47%'}} onSubmit={e => { trackDate(e)}}>
+                                <FormGroup>
+                                    <Label>DAY TO TRACK ?</Label>
+                                    <Input onChange={e => setTrackingDate(e.target.value)} type="date" required/>
+                                    <Button type="submit" className="trackButt" color="warning">
+                                        &#10004;
+                                    </Button>    
+                                </FormGroup>
+                            </Form>
+                            <Form style={{ float: 'right', width: '47%'}} onSubmit={e => { trackCategory(e)}}>
+                                <FormGroup>
+                                    <Label>TASK TO TRACK ?</Label>
+                                    <Input onChange={e => setTrackingCategory(e.target.value)} type="select" required>
+                                        <option></option>
+                                        <option value="Study">Studied</option>
+                                        <option value="Exercise / Yoga">Exercised / Yoga</option>
+                                        <option value="Work">Worked</option>
+                                        <option value="Daily Routines">Daily Routines</option>
+                                        <option value="Play">Played</option>
+                                        <option value="Sleep">Slept</option>
+                                        <option value="Misc.">Misc.</option>
+                                    </Input>
+                                    <Button type="submit" className="trackButt" color="warning">
+                                        &#10004;
+                                    </Button>
+                                </FormGroup>
+                            </Form>
+                        </span>
+                    </ModalBody>
+                    <ModalFooter>
+                        You have been prompted to select a category, it can be either a PAST day (for that day's entire activities), or a general Productivity graph since you started using our website, (based on a single category, we show hours distribution in that since you've started making records on our website).
+                    </ModalFooter>
+                </Modal>
                 <div className="manual">
                     <Card style={{ padding: '10px', backgroundColor: '#7000da', borderColor: 'black' }}>
                         <CardBody>
