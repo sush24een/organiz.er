@@ -2,10 +2,7 @@ import React from 'react';
 import ReactPlayer from 'react-player';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../CSS/StudyComponent.css";
-import {
-    Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button
-} from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
 import styled, { keyframes } from 'styled-components';
 import { fadeIn } from 'react-animations';
 

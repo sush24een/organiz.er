@@ -6,6 +6,7 @@ import "../CSS/Header.css";
 import ProductivityTracker from './ProductivityTracker.js';
 import StudyComponent from './StudyComponent';
 import MainComponent from './MainComponent.js';
+import Todos from './To-dos.js';
 
 
 function Header() {
@@ -24,6 +25,12 @@ function Header() {
     const studyComponent= () => {
         return(
             <StudyComponent/>
+        );
+    }
+
+    const todos = () => {
+        return(
+            <Todos/>
         );
     }
 
@@ -50,7 +57,8 @@ function Header() {
             </div>
             <Route exact={true} path="/" component={ mainComponent }/>
             <Route path="/productivityTracker" component={ productivityTracker }/>
-            <Route path="/studyWithMe" component={ studyComponent } />
+            <Route path="/studyWithMe" component={ studyComponent }/>
+            <Route path="/to-do" component={ todos } />
         </Router>
     );
 }

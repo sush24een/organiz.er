@@ -1,0 +1,157 @@
+.inputLabelsTodo {
+    color: #7000da;
+    font-size: 21px;
+    font-weight: 700;
+    text-shadow: 1px 2px 2px black;
+}
+
+.addTaskButt {
+    color: #7000da;
+    background-color: #333;
+    margin: auto;
+    font-size: 22px;
+    font-weight: 600;
+    width: 120px;
+}
+
+.addTask .modal-header {
+    color: black;
+    background-color: #7000da;
+}
+
+.addTask .modal-body {
+    background-color: #333;
+    color: white;
+    width: 100%;
+}
+
+.addTask .modal-footer {
+    background-color: #333;
+    color: #bbbbbb;
+}
+
+.todoButt {
+    color: #7000da;
+    background-color: #333;
+    margin-right: 30px;
+    font-size: 22px;
+    font-weight: 600;
+    width: 60px;
+}
+
+.todoButt:hover {
+    cursor: pointer;
+    animation: todoRot infinite 20s linear;
+}
+
+@keyframes todoRot {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.todoCardTitle {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.todoAlert {
+    background-color: #333;
+}
+
+.todosHolder {
+    width: 45%;
+    float: right;
+    margin-right: 40px;
+    margin-top: 10vw;
+}
+
+.todoComponent {
+    margin-top: 130px;
+}
+
+.todoFormalityText {
+    font-size: 35px;
+    color: white;
+    float: left;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-family: "Sofia", sans-serif;
+}
+
+.todosDesc {
+    float: left;
+    width: 40%;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.rainbow-text-TD {
+    float: left;
+    font-style: italic;
+    font-variant: small-caps;
+    font-family: "Sofia", sans-serif;
+    font-weight: 800;
+    font-size: 9em;
+    width: 3.2em;
+    line-height: 0.9em;
+}
+
+
+.rainbow-text-TD span span {
+    position: relative;
+    animation: move-text-color 0.75s forwards;
+    opacity: 0;
+}
+
+.rainbow-text-TD:hover span span {
+    cursor: pointer;
+    position: relative;
+    animation: move-text-color-rev infinite 1.5s linear;
+    opacity: 1;
+}
+
+@keyframes move-text-color {
+    0% {
+        bottom: -0.2em;
+        opacity: 0.3;
+        color: #00ff37;
+    }
+    50% {
+        bottom: 0.2em;
+        opacity: 0.5;
+        color: #05cdff;
+    }
+    100% {
+        bottom: 0;
+        opacity: 1;
+        color: #7000da;
+    }
+    
+}
+
+@keyframes move-text-color-rev {
+    75% {
+        bottom: -0.2em;
+        color: #05cdff;
+    }
+    100% {
+        bottom: 0;
+        color: #7000da;
+    }
+    50% {
+        bottom: 0em;
+        color: #00ff37;
+    }
+    25% {
+        bottom: 0.2em;
+        color: #05cdff;
+    }
+    0% {
+        bottom: 0;
+        color: #7000da;
+    }
+}
