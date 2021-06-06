@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Nav, NavItem } from 'reactstrap';
+import { Nav, NavItem, Button } from 'reactstrap';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../CSS/Header.css";
@@ -7,6 +7,7 @@ import ProductivityTracker from './ProductivityTracker.js';
 import StudyComponent from './StudyComponent';
 import MainComponent from './MainComponent.js';
 import Todos from './To-dos.js';
+import ModalInFunctionalComponent from "./FormComponent";
 
 
 function Header() {
@@ -39,19 +40,19 @@ function Header() {
             <div className="theNav">
                 <Nav>
                     <NavItem className="theNavItems">
-                        <Link to="/">Organiz.er</Link>  
-                        </NavItem>
-                    <NavItem className="theNavItems">
-                        <Link to="/to-do">To-do's</Link>
-                        </NavItem>
-                    <NavItem className="theNavItems">
-                        <Link to="/studyWithMe">Study With Me</Link>
+                        <Link to="/"><Button className="theNavButtons" outline color="danger">Organiz.er</Button></Link>  
                     </NavItem>
                     <NavItem className="theNavItems">
-                        <Link to="/productivityTracker">Productivity Tracker</Link>        
+                        <Link to="/to-do"><Button className="theNavButtons" outline color="danger">To-do's</Button></Link>
+                    </NavItem>
+                    <NavItem className="theNavItems">
+                        <Link to="/studyWithMe"><Button className="theNavButtons" outline color="danger">Study With Me</Button></Link>
+                    </NavItem>
+                    <NavItem className="theNavItems">
+                        <Link to="/productivityTracker"><Button className="theNavButtons" outline color="danger">Productivity Tracker</Button></Link>        
                     </NavItem>
                     <NavItem className="userInfo">
-                        <Button outline color="primary">user info stuff</Button>
+                        <ModalInFunctionalComponent/>
                     </NavItem>
                 </Nav>
             </div>

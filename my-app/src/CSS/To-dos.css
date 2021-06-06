@@ -1,3 +1,10 @@
+.cardForTodos {
+    width: 100%;
+    padding: 10px;
+    background-color: #7000da;
+    border-color: black
+}
+
 .inputLabelsTodo {
     color: #7000da;
     font-size: 21px;
@@ -44,6 +51,11 @@
     animation: todoRot infinite 20s linear;
 }
 
+.todoShowButt:hover {
+    cursor: pointer;
+    animation: todoRot infinite 20s linear;
+}
+
 @keyframes todoRot {
     from {
         transform: rotate(0deg);
@@ -60,10 +72,19 @@
 
 .todoAlert {
     background-color: #333;
+    border: 1px solid black;
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px white;
+}
+
+.todoAlert:hover {
+    cursor: pointer;
 }
 
 .todosHolder {
-    width: 45%;
+    width: 50%;
     float: right;
     margin-right: 40px;
     margin-top: 10vw;
@@ -110,8 +131,8 @@
 .rainbow-text-TD:hover span span {
     cursor: pointer;
     position: relative;
-    animation: move-text-color-rev infinite 1.5s linear;
-    opacity: 1;
+    animation: move-text-color-rev infinite 1.8s linear;
+    opacity: 0;
 }
 
 @keyframes move-text-color {
@@ -136,22 +157,27 @@
 @keyframes move-text-color-rev {
     75% {
         bottom: -0.2em;
+        opacity: 1;
         color: #05cdff;
     }
     100% {
         bottom: 0;
+        opacity: 1;
         color: #7000da;
     }
     50% {
         bottom: 0em;
+        opacity: 1;
         color: #00ff37;
     }
     25% {
         bottom: 0.2em;
+        opacity: 1;
         color: #05cdff;
     }
     0% {
         bottom: 0;
+        opacity: 1;
         color: #7000da;
     }
 }
