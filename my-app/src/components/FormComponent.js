@@ -1,6 +1,7 @@
 import Modal from '../../node_modules/react-modal';
 import FormInfo from './FormInfo';
 import React, { useState } from "react";
+import { Button } from 'reactstrap';
 
 
 function ModalInFunctionalComponent (){
@@ -22,15 +23,16 @@ function ModalInFunctionalComponent (){
         bottom                : 'auto',
         marginRight           : '-50%',
         transform             : 'translate(-50%, -50%)',
-        backgroundColor       : '#52307c'      
+        backgroundColor       : '#7000da'//BCCBFF     
       }
   };
+ 
 
     return(
         <>
-            <button onClick={setModalIsOpenToTrue}>Login</button>
+            <Button color="primary" onClick={setModalIsOpenToTrue}>Login</Button>
             <Modal isOpen={modalIsOpen} style={customStyles}>
-                <button onClick={setModalIsOpenToFalse}>x</button>
+                <Button color="danger" onClick={setModalIsOpenToFalse}>x</Button>
                 <FormInfo/>
             </Modal>
         </>

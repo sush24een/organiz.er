@@ -24,9 +24,9 @@ function ProductivityTracker() {
     const [trackingDate, setTrackingDate] = React.useState("");
     const [trackingCategory, setTrackingCategory] = React.useState("");
 
-    function graphGen(data) {
+    /*function graphGen(data) {
         
-    }
+    }*/
 
     async function trackDate(e) {
         e.preventDefault();

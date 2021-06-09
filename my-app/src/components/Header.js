@@ -40,16 +40,16 @@ function Header() {
             <div className="theNav">
                 <Nav>
                     <NavItem className="theNavItems">
-                        <Link to="/"><Button className="theNavButtons" outline color="danger">Organiz.er</Button></Link>  
+                        <Link to="/"><Button className="theNavButtons" outline color="warning">Organiz.er</Button></Link>  
                     </NavItem>
                     <NavItem className="theNavItems">
-                        <Link to="/to-do"><Button className="theNavButtons" outline color="danger">To-do's</Button></Link>
+                        <Link to="/to-do"><Button className="theNavButtons" outline color="warning">To-do's</Button></Link>
                     </NavItem>
                     <NavItem className="theNavItems">
-                        <Link to="/studyWithMe"><Button className="theNavButtons" outline color="danger">Study With Me</Button></Link>
+                        <Link to="/studyWithMe"><Button className="theNavButtons" outline color="warning">Study With Me</Button></Link>
                     </NavItem>
                     <NavItem className="theNavItems">
-                        <Link to="/productivityTracker"><Button className="theNavButtons" outline color="danger">Productivity Tracker</Button></Link>        
+                        <Link to="/productivityTracker"><Button className="theNavButtons" outline color="warning">Productivity Tracker</Button></Link>        
                     </NavItem>
                     <NavItem className="userInfo">
                         <ModalInFunctionalComponent/>

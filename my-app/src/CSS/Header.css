@@ -1,8 +1,6 @@
-.themeChanger {
-    cursor: pointer;
-    color: #7000da;
-    width: 40px;
-    margin-top: 0px;
+.submitUserInfo {
+    width: 100%;
+    margin-top: 10px;
 }
 
 .theNavButtons {
@@ -21,11 +19,16 @@
 .theNav {
     margin-top: 5px;
     width: 100%;
-    background-color: rgb(65, 65, 65);
+    /* background-color: rgb(65, 65, 65); */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    animation: gradient 15s ease infinite;
     font-size: 20px;
     height: 80px;
     position: fixed;
     z-index: 1;
+    margin: 0; 
+    /* padding-top: 50px; */
+    top:0 
 }
 
 .userInfo {

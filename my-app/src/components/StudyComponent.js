@@ -2,9 +2,12 @@ import React from 'react';
 import ReactPlayer from 'react-player';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../CSS/StudyComponent.css";
-import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
 import styled, { keyframes } from 'styled-components';
 import { fadeIn } from 'react-animations';
+import { Link } from "react-router-dom";
+
+
 
 const fadeInAnimation = keyframes`${fadeIn}`;
 const FadyDiv = styled.div`
@@ -39,7 +42,15 @@ function StudyComponent(){
                             <CardText style={{ marginLeft:"8px", color: "white"}} className="align-items-stretch d-flex">
                                 Exam season is upon university and college students and it can be extremely difficult to remain motivated to study. To combat this lack of concentration surrounding studying, a growing number of students have turned to YouTube for motivation. Study with me videos have gained popularity as a way for students to get motivated and inspired.
                             </CardText>
-                            <Button style={{textAlign:"center"}} color="link">Click here to know more!</Button>
+                                
+                            <a href='https://digitalalberta.com/study-with-me-youtube-gives-students-new-study-tools//'>
+                                <button>
+                                    Click Here to know More!
+                             </button>
+                             </a>
+                             
+                                 
+                           
                         </CardBody>    
                     </Card>
                 </div>

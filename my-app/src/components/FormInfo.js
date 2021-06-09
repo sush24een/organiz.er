@@ -1,29 +1,29 @@
-import React from 'react'
+import React from 'react';
+import { Input, Label, Button } from 'reactstrap';
 
 function FormInfo () {
-
-        return (
-            <>
-            <br></br>
-             <label style={{color:"white", marginLeft:"10px"}}>
+    return (
+        <>
+            <br/>
+            <Label style={{color:"white", marginLeft:"10px", fontSize:"20px"}}>
                 First Name 
-                <input type="text" size="30" placeholder="First Name" style={{marginLeft:"5px"}}/>
-            </label>
-            <br></br>
-            <label style={{color:"white", marginLeft:"10px"}}>
+                <Input type="text" size="30" placeholder="First Name" style={{marginLeft:"5px"}}/>
+            </Label>
+            <br/>
+            <Label style={{color:"white", marginLeft:"10px", fontSize:"20px"}}>
                 Last Name 
-                <input type="text" size="30" placeholder="Last Name" style={{marginLeft:"5px"}}/>
-            </label>
-            <br></br>
-            <label style={{color:"white", marginLeft:"10px"}}>
+                <Input type="text" size="30" placeholder="Last Name" style={{marginLeft:"5px"}}/>
+            </Label>
+            <br/>
+            <Label style={{color:"white", marginLeft:"10px", fontSize:"20px"}}>
                 Password
-                <input type="text" size="30" placeholder="Password" style={{marginLeft:"12px"}}/>
-            </label>
-            <br></br>
-                <input type="submit" value="Submit" />
-            </>
-        )
+                <Input type="text" size="30" placeholder="Password" style={{marginLeft:"5px"}}/>
+            </Label >
+            <br/>
+            <Button color="success" type="submit" className="submitUserInfo">Submit</Button>
+        </>
+    )
 
 }
 
-export default FormInfo
+export default FormInfo;

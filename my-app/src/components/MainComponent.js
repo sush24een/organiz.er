@@ -1,5 +1,5 @@
 import React from "react";
-import { UncontrolledCarousel } from 'reactstrap';
+import { UncontrolledCarousel, Button } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../CSS/MainComponent.css';
 import styled, { keyframes } from 'styled-components';
@@ -14,13 +14,13 @@ const items = [
     {
         src: './images/to-do2.jpg',
         altText: 'To-Dos',
-        caption: 'Management of Tasks, for the near Future. (caption subject to change)',
+        caption: 'Management of Tasks, for the near Future.',
         key: 1,
     },
     {
         src: './images/timeManagement2.jpeg',
         altText: 'Productivity Tracker',
-        caption: 'Assess the Time Management so far',
+        caption: 'Assess your Time Management so far',
         key: 2
     },
     {
@@ -36,8 +36,9 @@ function MainComponent() {
         <div className="mainComponent">
             <FadyDiv><h1 className="rainbow-text-App">ORGANIZ.ER</h1></FadyDiv>
             <div className="carousel">
-                <UncontrolledCarousel className="MC-slides" items={items}/>
+                <UncontrolledCarousel className="MC-slides" items={items} />
             </div>
+            
         </div>
     );
 }
