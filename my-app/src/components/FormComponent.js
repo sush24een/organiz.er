@@ -32,7 +32,7 @@ function ModalInFunctionalComponent (){
         <>
             <Button color="primary" onClick={setModalIsOpenToTrue}>Login</Button>
             <Modal isOpen={modalIsOpen} style={customStyles}>
-                <Button color="danger" onClick={setModalIsOpenToFalse}>x</Button>
+                <Button style={{ float: 'right' }} color="danger" onClick={setModalIsOpenToFalse}>x</Button>
                 <FormInfo/>
             </Modal>
         </>
