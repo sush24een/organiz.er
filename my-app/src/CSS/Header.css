@@ -5,7 +5,9 @@
 
 .theNavButtons {
     cursor: pointer;
-    text-shadow: 1px 1px 5px black;
+    color: black;
+    font-style: oblique;
+    font-weight: 600;
 }
 
 .theNavItems {
@@ -13,14 +15,13 @@
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
-    text-shadow: 1px 1px 5px black;
 }
 
 .theNav {
     margin-top: 5px;
     width: 100%;
     /* background-color: rgb(65, 65, 65); */
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background: linear-gradient(-45deg, #e79379, #e0749e, #81c7e0, #5fdb7e);
     animation: gradient 15s ease infinite;
     font-size: 20px;
     height: 80px;

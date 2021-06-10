@@ -1,7 +1,7 @@
 .trackButt {
     margin-top: 5px;
     float: right;
-    color: #7000da;
+    color: #9f69d1;
     background-color: black;
     border-color: #333;
     font-weight: 800;
@@ -10,7 +10,7 @@
 
 .tracker .modal-header {
     color: black;
-    background-color: #7000da;
+    background-color: #9f69d1;
 }
 
 .tracker .modal-footer {
@@ -26,7 +26,7 @@
 
 .PTalerts {
     margin-top: 10px;
-    color:#7000da;
+    color:#9f69d1;
     background-color: #333;
     font-weight: bold;
     border-color: #333;
@@ -37,7 +37,7 @@
     position: absolute;
     width: 0px;
     opacity: .75;
-    box-shadow: #7000da 0px 0px 20px 2px;
+    box-shadow: #9f69d1 0px 0px 20px 2px;
     opacity: 0;
     top: 100vh;
     bottom: 0px;
@@ -150,7 +150,7 @@
 
 .submitButt {
     float: right;
-    color: #7000da;
+    color: #9f69d1;
     background-color: #333;
     border-color: #333;
     font-weight: 800;
@@ -160,7 +160,7 @@
 .textShouldBeVisible {
     font-weight: 500;
     font-size: 18px;
-    background-color: #7000da;
+    background-color: #9f69d1;
     border-color: black;
     color: #333;
 }
@@ -211,19 +211,20 @@ h1.rainbow-text-PT {
 .rainbow-text-PT {
     /* Create a conic gradient. */
     /* Double percentages to avoid blur (#000 10%, #fff 10%, #fff 20%, ...). */
-    background: #7000da;
-    background-color: #7000da;
+    background: #8400ff;
+    background-color: #8400ff;
     background: conic-gradient(
-      #A7489B 16.666%, 
-      #7000da 16.666%, 
-      #7000da 33.333%, 
-      #476098 33.333%, 
-      #476098 50%, 
-      #8B9862 50%, 
-      #8B9862 66.666%, 
-      #F18F43 66.666%, 
-      #F18F43 83.333%, 
-      #CA4246 83.333%);
+        #ff00dd 16.666%, 
+        #8400ff 16.666%, 
+        #8400ff 33.333%, 
+        #00fff2 33.333%, 
+        #00fff2 50%, 
+        #c3ff00 50%, 
+        #c3ff00 66.666%, 
+        #ff6f00 66.666%, 
+        #ff6f00 83.333%, 
+        #ff0008 83.333%
+    );
     
     /* Set thee background size and repeat properties. */
     background-size: 57%;

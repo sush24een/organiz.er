@@ -187,7 +187,7 @@ function ProductivityTracker() {
                     </ModalFooter>
                 </Modal>
                 <div className="manual">
-                    <Card style={{ padding: '10px', backgroundColor: '#7000da', borderColor: 'black' }}>
+                    <Card style={{ padding: '10px', backgroundColor: '#9f69d1', borderColor: 'black' }}>
                         <CardBody>
                             <CardTitle tag="h4"><strong>Manual</strong></CardTitle>
                             <CardSubtitle className="textShouldBeVisible" tag="h6">
@@ -229,7 +229,7 @@ function ProductivityTracker() {
                     </Card>
                 </div>
                 <div className="counter">
-                    <Card style={{ padding: '10px', backgroundColor: '#7000da', borderColor: 'black' }}>
+                    <Card style={{ padding: '10px', backgroundColor: '#9f69d1', borderColor: 'black' }}>
                         <CardBody>
                             <CardTitle tag="h4"><strong>Counted</strong></CardTitle>
                             <CardSubtitle className="textShouldBeVisible" tag="h6">

@@ -26,7 +26,7 @@ const items = [
     {
         src: './images/studyWithMe2.jpeg',
         altText: 'Study With Me',
-        caption: 'Portal into a surrounding with Peace, Focus and Productive Aura.',
+        caption: 'Portal into Peace, Focus and Productive Aura.',
         key: 3
     }
 ];

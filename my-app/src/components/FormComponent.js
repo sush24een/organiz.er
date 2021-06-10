@@ -15,18 +15,18 @@ function ModalInFunctionalComponent (){
     const setModalIsOpenToFalse =()=>{
         setModalIsOpen(false)
     }
+    
     const customStyles = {
-      content : {
-        top                   : '50%',
-        left                  : '50%',
-        right                 : 'auto',
-        bottom                : 'auto',
-        marginRight           : '-50%',
-        transform             : 'translate(-50%, -50%)',
-        backgroundColor       : '#7000da'//BCCBFF     
-      }
-  };
- 
+        content : {
+            top                   : '50%',
+            left                  : '50%',
+            right                 : 'auto',
+            bottom                : 'auto',
+            marginRight           : '-50%',
+            transform             : 'translate(-50%, -50%)',
+            backgroundColor       : '#9f69d1'//BCCBFF     
+        }
+    };
 
     return(
         <>

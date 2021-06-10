@@ -34,10 +34,10 @@ function StudyComponent(){
                 <FadyDiv><h1 class="rainbow-text-SC">Study With Me</h1></FadyDiv>
                 </div>
                 <div class="col">
-                    <Card style={{ width: "100%", padding: '10px', backgroundColor: '#7000da', borderColor: 'black' }} className="card mb-3">
+                    <Card style={{ width: "100%", padding: '10px', backgroundColor: '#9f69d1', borderColor: 'black' }} className="card mb-3">
                         <CardImg top width="100%"  src="/images/study.jpg"/>
                         <CardBody style={{width: "18rem"}}>
-                            <CardTitle style={{marginTop: "8px", marginLeft:"8px", color: "white"}} tag="h5">What even is Study With Me?</CardTitle>
+                            <CardTitle style={{marginTop: "8px", marginLeft:"8px", color: "black"}} tag="h5">What even is Study With Me?</CardTitle>
                             <CardSubtitle style={{ marginLeft:"8px", color: "#FAF9F6"}} tag="h6" className="mb-2 text-muted">Don't worry, we got you!!</CardSubtitle>
                             <CardText style={{ marginLeft:"8px", color: "white"}} className="align-items-stretch d-flex">
                                 Exam season is upon university and college students and it can be extremely difficult to remain motivated to study. To combat this lack of concentration surrounding studying, a growing number of students have turned to YouTube for motivation. Study with me videos have gained popularity as a way for students to get motivated and inspired.

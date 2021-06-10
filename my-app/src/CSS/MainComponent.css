@@ -1,7 +1,7 @@
 .MC-slides {
     color: rgb(255, 0, 0);
     text-shadow: 1px 1px 4px black;
-    height: 520px;
+    height: 650px;
 }
 
 .mainComponent {
@@ -32,19 +32,20 @@ h1.rainbow-text-App {
 .rainbow-text-App {
     /* Create a conic gradient. */
     /* Double percentages to avoid blur (#000 10%, #fff 10%, #fff 20%, ...). */
-    background: #7000da;
-    background-color: #7000da;
+    background: #8400ff;
+    background-color: #8400ff;
     background: conic-gradient(
-        #A7489B 16.666%, 
-        #7000da 16.666%, 
-        #7000da 33.333%, 
-        #476098 33.333%, 
-        #476098 50%, 
-        #8B9862 50%, 
-        #8B9862 66.666%, 
-        #F18F43 66.666%, 
-        #F18F43 83.333%, 
-        #CA4246 83.333%);
+        #ff00dd 16.666%, 
+        #8400ff 16.666%, 
+        #8400ff 33.333%, 
+        #00fff2 33.333%, 
+        #00fff2 50%, 
+        #c3ff00 50%, 
+        #c3ff00 66.666%, 
+        #ff6f00 66.666%, 
+        #ff6f00 83.333%, 
+        #ff0008 83.333%
+    );
     
     /* Set thee background size and repeat properties. */
     background-size: 57%;

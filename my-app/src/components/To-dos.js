@@ -27,7 +27,7 @@ function Todos() {
     const [taskName, setTaskName] = useState("");
     const [taskDate, setTaskDate] = useState("");
     const [taskTime, setTaskTime] = useState("");
-    const [taskColor, setTaskColor] = useState("#7000da");
+    const [taskColor, setTaskColor] = useState("#9f69d1");
     const [taskDesc, setTaskDesc] = useState("");
     const [taskObj, settaskObj] = useState([]);
     const [target, setTarget] = useState(null);
@@ -58,7 +58,7 @@ function Todos() {
             });
             var data = await response.json();
             console.log(data);
-            document.getElementsByClassName("cardForTodos")[0].style.backgroundColor = "#7000da";
+            document.getElementsByClassName("cardForTodos")[0].style.backgroundColor = "#9f69d1";
             document.getElementsByClassName("todoCardTitle")[0].innerText = "CRUD Controls";
             document.getElementsByClassName("todoButt")[0].style.visibility = "visible";
             document.getElementsByClassName("todoButt")[1].innerText = "-";
@@ -133,7 +133,7 @@ function Todos() {
                 target.style.backgroundImage = "linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0))";
                 target.innerText = taskName + " | " + taskTime + " | " + taskDate;
                 target.style.backgroundColor = taskColor;
-                document.getElementsByClassName("cardForTodos")[0].style.backgroundColor = "#7000da";
+                document.getElementsByClassName("cardForTodos")[0].style.backgroundColor = "#9f69d1";
                 document.getElementsByClassName("todoCardTitle")[0].innerText = "CRUD Controls";
                 document.getElementsByClassName("todoButt")[0].style.visibility = "visible";
                 document.getElementsByClassName("todoButt")[2].style.width = "60px";
@@ -164,7 +164,7 @@ function Todos() {
             shoTask();
             setTimeout(() => {
                 shoTask();
-                document.getElementsByClassName("cardForTodos")[0].style.backgroundColor = "#7000da";
+                document.getElementsByClassName("cardForTodos")[0].style.backgroundColor = "#9f69d1";
                 document.getElementsByClassName("todoCardTitle")[0].innerText = "CRUD Controls";
             }, 1000);
         }
@@ -184,7 +184,7 @@ function Todos() {
         setTaskName("");
         setTaskDate("");
         setTaskTime("");
-        setTaskColor("#7000da");
+        setTaskColor("#9f69d1");
         setTaskDesc("");
     }
 
@@ -210,7 +210,7 @@ function Todos() {
             }
             else {
                 setEditTaskState(false);
-                document.getElementsByClassName("cardForTodos")[0].style.backgroundColor = "#7000da";
+                document.getElementsByClassName("cardForTodos")[0].style.backgroundColor = "#9f69d1";
                 document.getElementsByClassName("todoCardTitle")[0].innerText = "CRUD Controls";
                 document.getElementsByClassName("todoButt")[0].style.visibility = "visible";
                 document.getElementsByClassName("todoButt")[2].style.width = "60px";
@@ -257,7 +257,7 @@ function Todos() {
                             shoTask();
                             setEditTaskState(false);
                             if(target != null) target.style.backgroundImage = "linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0))";
-                            document.getElementsByClassName("cardForTodos")[0].style.backgroundColor = "#7000da";
+                            document.getElementsByClassName("cardForTodos")[0].style.backgroundColor = "#9f69d1";
                             document.getElementsByClassName("todoCardTitle")[0].innerText = "CRUD Controls";
                             document.getElementsByClassName("todoButt")[0].style.visibility = "visible";
                             document.getElementsByClassName("todoButt")[2].style.width = "60px";
@@ -276,10 +276,10 @@ function Todos() {
                 <Card className="cardForTodos">
                     <CardBody style={{ padding: "8px"}}>
                         <CardTitle className="todoCardTitle" tag="h5">CRUD controls</CardTitle>
-                        <Button className="todoButt" color="success" onClick={ toggle }>+</Button>
-                        <Button className="todoButt" color="danger" onClick={ delTask }>-</Button>
-                        <Button className="todoButt fa" color="warning" onClick={ ediTask }>&#xf040;</Button>
-                        <Button className="todoButt" color="info" onClick={ shoTask }>&#8635;</Button>
+                        <Button style={{ color: "green" }} className="todoButt" color="success" onClick={ toggle }>+</Button>
+                        <Button style={{ color: "red" }} className="todoButt" color="danger" onClick={ delTask }>-</Button>
+                        <Button style={{ color: "yellow" }} className="todoButt fa" color="warning" onClick={ ediTask }>&#xf040;</Button>
+                        <Button style={{ color: "aqua" }} className="todoButt" color="info" onClick={ shoTask }>&#8635;</Button>
                         <hr color="black"/>
                         <CardTitle style={{marginTop: "8px", marginLeft:"8px", color: "white"}} tag="h5">Tasks</CardTitle>
                         {taskObj.map(obj => {

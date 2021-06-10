@@ -4,13 +4,13 @@
     left: 45vw;
     width: 10px;
     height: 10px;
-    border: solid 1px #7000da;
+    border: solid 1px #9f69d1;
     transform-origin: top left;
     transform: scale(0) rotate(0deg) translate(-50%, -50%);
     animation: cube 12s ease-in forwards infinite;
   }
   .cube:nth-child(2n) {
-    border-color: #7000da ;
+    border-color: #9f69d1 ;
   }
   .cube:nth-child(2) {
     animation-delay: 2s;
@@ -56,21 +56,19 @@
 
 h1.col{
     /* text-shadow: 1px 1px 2px #52307c; */
-    color: #7000da;
+    color: #9f69d1;
     font-style: italic;
 }
 
 h2{
-    color: #7000da;
+    color: #9f69d1;
 }
-
 
 .align-items-stretch {
     text-align: justify;
     text-justify: inter-character;
     display: flex;
 }
-
 
 .align-items-stretch:after {
     content: "";
@@ -96,19 +94,20 @@ h1.rainbow-text-SC {
 .rainbow-text-SC {
     /* Create a conic gradient. */
     /* Double percentages to avoid blur (#000 10%, #fff 10%, #fff 20%, ...). */
-    background: #7000da;
-    background-color: #7000da;
+    background: #8400ff;
+    background-color: #8400ff;
     background: conic-gradient(
-      #A7489B 16.666%, 
-      #7000da 16.666%, 
-      #7000da 33.333%, 
-      #476098 33.333%, 
-      #476098 50%, 
-      #8B9862 50%, 
-      #8B9862 66.666%, 
-      #F18F43 66.666%, 
-      #F18F43 83.333%, 
-      #CA4246 83.333%);
+        #ff00dd 16.666%, 
+        #8400ff 16.666%, 
+        #8400ff 33.333%, 
+        #00fff2 33.333%, 
+        #00fff2 50%, 
+        #c3ff00 50%, 
+        #c3ff00 66.666%, 
+        #ff6f00 66.666%, 
+        #ff6f00 83.333%, 
+        #ff0008 83.333%
+    );
     
     /* Set thee background size and repeat properties. */
     background-size: 57%;
